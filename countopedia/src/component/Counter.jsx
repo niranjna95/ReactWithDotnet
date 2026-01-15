@@ -5,17 +5,21 @@ function Counter() {
   const [counter, setCounter] = useState(0);
   const [gameStatus, setGameStatus] = useState("");
   const handleIncrement = () => {
-    setGameStatus("");
+    let newCountValue = counter + 1;
     setCounter(counter + 1);
-    if (counter >= 5) {
-      setGameStatus("You Win the game");
+    if (newCountValue >= 5) {
+      setGameStatus("You Won !!");
+    } else {
+      setGameStatus("");
     }
   };
   const handleDecrement = () => {
-    setGameStatus("");
-    setCounter(counter - 1);
-    if (counter <= -1) {
-      setGameStatus("You lose the game");
+    let newCountValue = counter - 1;
+    setCounter(newCountValue);
+    if (newCountValue <= -5) {
+      setGameStatus("You Lost !!");
+    } else {
+      setGameStatus("");
     }
   };
   const handleRandomPlay = () => {
